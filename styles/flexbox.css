@@ -1,0 +1,54 @@
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../fonts/BerkeleyMono-Bold.woff) format('woff'),
+        url(../fonts/BerkeleyMono-BoldItalic.woff) format('woff'),
+        url(../fonts/BerkeleyMono-Italic.woff) format('woff'),
+        url(../fonts/BerkeleyMono-Regular.woff) format('woff');
+    }
+@font-face {
+    font-family: vfd;
+    src: url(../fonts/vfd.woff2) format('woff2');
+    }
+body {
+    font-family: berkeley-mono;
+    margin: 5% 10% 0% 10%;
+    padding: 2%;
+    }
+header {
+    background: rgb(226, 226, 135);
+    height: 100px;
+    }
+h1 {
+    font-family: vfd;
+    margin: 0;
+    text-align: center;
+    line-height: 100px;
+    }
+article {
+    border: 2px solid black;
+    margin: 1% 0%;
+    padding: 1% 1% 1% 1%;
+    background: rgb(153, 252, 235);
+    min-width: 30%;
+    flex:1; /* proportional allocation of space within flexbox */
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: content;
+    }
+img {
+    flex:1;
+    max-width: 100%;
+    max-height: 100%;
+    }
+div {
+    height: 100px;
+    border: 2px solid black;
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+    }
+section {
+    display: flex;
+    flex-flow: row wrap; /* determine direction of flexbox and whether to wrap */
+    align-items: stretch;
+    }

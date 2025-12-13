@@ -1,0 +1,87 @@
+/*
+ref colours
+#380C2a background purple
+#5E5C64 background grey
+#26a267 text highlight green
+#DDDDDD text white
+#000000 black  
+#12488b low contrast blue  
+#a1724c link brown
+#745237 visited link brown
+*/
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../fonts/BerkeleyMono-Bold.woff) format('woff'),
+        url(../fonts/BerkeleyMono-BoldItalic.woff) format('woff'),
+        url(../fonts/BerkeleyMono-Italic.woff) format('woff'),
+        url(../fonts/BerkeleyMono-Regular.woff) format('woff');
+    }
+@font-face {
+    font-family: vfd;
+    src: url(../fonts/vfd.woff2) format('woff2');
+    }
+
+body {
+    background-color: #380C2a;
+    color: #DDDDDD;
+    font-family: berkeley-mono;
+    margin: 5% 10% 0% 10%;
+    /*border: 5px solid #000000;*/
+    padding: 2%;
+    
+    }
+@media (width >= 70em) {
+    body {
+        font-size: 130%;
+        }
+    }
+footer {
+    font-size: 80%;
+    text-align: center;
+    color: #12488b;
+    margin-top: 5%;
+    border-top: 1px solid #12488b;
+    padding-top: 1%;
+    }
+/* element stylings */
+p {
+    text-indent: 8%; 
+    }
+h1 {
+    font-family: vfd;
+    color: #26a267;    
+    text-align: center;
+    }
+h2 {
+    font-family: vfd;
+    color: black;
+    background: #DDDDDD;
+    padding:    0.2% 0.5% 1% 0.5%;
+    }
+em { /*light emphasis*/
+    font-style: italic;
+    color: #26a267;
+    }
+.highlight { /*heavy emphasis*/
+  background: #DDDDDD;
+  color: black;
+    }
+.no-indent {
+    text-indent: 0%;
+    }
+/* link stylings */
+a:link {
+    color: #a1724c;
+    text-decoration: underline;
+    }
+a:visited {
+    color: #745237;
+    text-decoration: underline;
+    }
+footer a:link {
+        color: #12488b;
+        text-decoration: underline;
+    }
+a:hover, footer a:hover {
+      text-decoration: none;    
+        }    
