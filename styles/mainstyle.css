@@ -11,16 +11,57 @@ ref colours
 */
 @font-face {
     font-family: berkeley-mono;
-    src: url(../fonts/BerkeleyMono-Bold.woff) format('woff'),
-        url(../fonts/BerkeleyMono-BoldItalic.woff) format('woff'),
-        url(../fonts/BerkeleyMono-Italic.woff) format('woff'),
-        url(../fonts/BerkeleyMono-Regular.woff) format('woff');
+    src: url(../fonts/BerkeleyMono-Bold.ttf) format('truetype'),
+        url(../fonts/BerkeleyMono-BoldItalic.ttf) format('truetype'),
+        url(../fonts/BerkeleyMono-Italic.ttf) format('truetype'),
+        url(../fonts/BerkeleyMono-Regular.ttf) format('truetype');
     }
 @font-face {
-    font-family: vfd;
-    src: url(../fonts/vfd.woff2) format('woff2');
-    }
+    font-family: berkeley-mono;
+    src: url(../fonts/BerkeleyMono-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../fonts/BerkeleyMono-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../fonts/BerkeleyMono-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../fonts/BerkeleyMono-BoldItalic.ttf) format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: vfd;
+    src: url(../fonts/vfd.ttf) format('truetype');
+    src: url/fonts/vfd.woff2 format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+h1 {
+    font-family: vfd;
+    color: #26a267;    
+    text-align: center;
+    }
+h2 {
+    font-family: vfd;
+    color: black;
+    background: #DDDDDD;
+    padding:    0.2% 0.5% 1% 0.5%;
+    }
 body {
     background-color: #380C2a;
     color: #DDDDDD;
@@ -47,17 +88,7 @@ footer {
 p {
     text-indent: 8%; 
     }
-h1 {
-    font-family: vfd;
-    color: #26a267;    
-    text-align: center;
-    }
-h2 {
-    font-family: vfd;
-    color: black;
-    background: #DDDDDD;
-    padding:    0.2% 0.5% 1% 0.5%;
-    }
+
 em { /*light emphasis*/
     font-style: italic;
     color: #26a267;
