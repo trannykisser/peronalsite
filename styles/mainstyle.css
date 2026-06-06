@@ -51,6 +51,62 @@ ref colours
     font-weight: normal;
     font-style: normal;
 }
+/*classes*/
+/* .container {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    justify-items: center;
+    grid-auto-flow: column;
+    column-gap: 2%;
+} */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  /* grid-column-gap: 10px;; */
+  align-items: stretch; 
+  justify-items: center;
+}
+.main {
+    grid-column: 2;
+    padding: 0% 10%;
+    }
+
+.header {
+    position: sticky;
+    grid-column: 1;
+    top: 0;
+    left: 0;
+    font-size: 1fr;
+    height:100vh;
+    text-align: left;
+    color: #12488b;
+    border-right: 2px solid #12488b;
+    padding: 0% 1vw;
+    text-indent: 0%;
+    }
+.footer {
+    font-size: 1fr;
+    text-align: center;
+    color: #12488b;
+    margin-top: 5%;
+    border-top: 1px solid #12488b;
+    /* padding-top: 1%; */
+    text-indent: 0%;
+    }
+
+.title {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    font-family: vfd;
+    color: #26a267;
+    text-align: center;
+    border-bottom: 1px solid #12488b;
+    padding: 1%;
+    text-indent: 0%;
+    }
+
+}
+/* element stylings */
 h1 {
     font-family: vfd;
     color: #26a267;    
@@ -66,27 +122,14 @@ body {
     background-color: #380C2a;
     color: #DDDDDD;
     font-family: berkeley-mono;
-    margin: 5% 10% 0% 10%;
-    /*border: 5px solid #000000;*/
-    padding: 2%;
+    /* border: 5px solid #000000; */
+    /* padding: 2%; */
+    margin: 0;
     
     }
-@media (width >= 70em) {
-    body {
-        font-size: 130%;
-        }
-    }
-footer {
-    font-size: 80%;
-    text-align: center;
-    color: #12488b;
-    margin-top: 5%;
-    border-top: 1px solid #12488b;
-    padding-top: 1%;
-    }
-/* element stylings */
 p {
-    text-indent: 8%; 
+    text-indent: 5%; 
+
     }
 
 em { /*light emphasis*/
@@ -96,6 +139,7 @@ em { /*light emphasis*/
 .highlight { /*heavy emphasis*/
   background: #DDDDDD;
   color: black;
+  padding: 0 0.2%;
     }
 .no-indent {
     text-indent: 0%;
@@ -109,10 +153,10 @@ a:visited {
     color: #745237;
     text-decoration: underline;
     }
-footer a:link {
+.footer a:link, .header a:link, .footer a:visited, .header a:visited {
         color: #12488b;
         text-decoration: underline;
     }
-a:hover, footer a:hover {
+a:hover, .footer a:hover, .header a:hover {
       text-decoration: none;    
         }    
