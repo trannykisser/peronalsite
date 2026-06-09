@@ -1,0 +1,188 @@
+/*
+ref colours
+#380C2a background purple
+#5E5C64 background grey
+#26a267 text highlight green
+#DDDDDD text white
+#000000 black  
+#12488b low contrast blue  
+#a1724c link brown
+#745237 visited link brown
+*/
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../typefaces/BerkeleyMono-Bold.ttf) format('truetype'),
+        url(../typefaces/BerkeleyMono-BoldItalic.ttf) format('truetype'),
+        url(../typefaces/BerkeleyMono-Italic.ttf) format('truetype'),
+        url(../typefaces/BerkeleyMono-Regular.ttf) format('truetype');
+    }
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../typefaces/BerkeleyMono-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../typefaces/BerkeleyMono-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../typefaces/BerkeleyMono-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    }
+
+@font-face {
+    font-family: berkeley-mono;
+    src: url(../typefaces/BerkeleyMono-BoldItalic.ttf) format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    }
+
+@font-face {
+    font-family: vfd;
+    src: url(../typefaces/vfd.ttf) format('truetype');
+    src: url(../typefaces/vfd.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/*classes*/
+/* .container {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    justify-items: center;
+    grid-auto-flow: column;
+    column-gap: 2%;
+} */
+.grid-vertical {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  /* grid-column-gap: 10px;; */
+  align-items: stretch; 
+  justify-items: center;
+    }
+.main {
+    grid-column: 2;
+    padding: 0% 10%;
+    }
+
+.header {
+    position: sticky;
+    grid-column: 1;
+    top: 0;
+    left: 0;
+    font-size: 1fr;
+    height:100vh;
+    text-align: left;
+    color: #12488b;
+    border-right: 2px solid #12488b;
+    padding: 0% 1vw;
+    text-indent: 0%;
+    }
+.footer {
+    text-align: center;
+    color: #12488b;
+    margin-top: 5%;
+    border-top: 1px solid #12488b;
+    /* padding-top: 1%; */
+    text-indent: 0%;
+    }
+
+.title {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    font-family: vfd;
+    color: #26a267;
+    text-align: center;
+    border-bottom: 1px solid #12488b;
+    padding: 1%;
+    text-indent: 0%;
+    }
+
+.button {
+    font-size: 1.5em;
+    }
+.button-active {
+    color: #12428b;
+    font-size: 1.5em;
+    }
+.index {
+    list-style-position: inside;
+    list-style-type: none;
+    padding-left: 0;
+    }
+/* element stylings */
+body {
+    background-color: #380C2a;
+    color: #DDDDDD;
+    font-family: berkeley-mono;
+    /* border: 5px solid #000000; */
+    /* padding: 2%; */
+    margin: 0;
+    font-size: 1.4em;
+    }
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    }
+nav>ul {
+    font-family: vfd;
+    text-align: left;
+    list-style: none
+    }
+nav>ul>li {
+    padding: 2% 0%;
+    }
+h1 {
+    font-family: vfd;
+    color: #26a267;    
+    text-align: center;
+    }
+h2 {
+    font-family: vfd;
+    color: black;
+    background: #DDDDDD;
+    padding:    0.2% 0.5% 1% 0.5%;
+    }
+
+p {
+    text-indent: 5%; 
+
+    }
+
+em { /*light emphasis*/
+    font-style: italic;
+    color: #26a267;
+    }
+strong { /*heavy emphasis*/
+  background: #DDDDDD;
+  color: black;
+  padding: 0 0.2%;
+    }
+.no-indent {
+    text-indent: 0%;
+    }
+/* link stylings */
+a:link, a:visited{
+    color: #a1724c;
+    text-decoration: underline;
+    }
+.footer a:link, .header a:link, .footer a:visited, .header a:visited {
+        color: #12488b;
+        text-decoration: underline;
+    }
+a:hover, .footer a:hover, .header a:hover {
+      text-decoration: none;    
+    }    
+.title a:link, .title a:visited {
+    text-decoration: none;
+    }

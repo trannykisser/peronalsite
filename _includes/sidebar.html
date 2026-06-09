@@ -1,0 +1,21 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="tksr">
+    <meta name="description" content="sidebar">
+    <title>sidebar</title>
+</head>
+<body>
+  <div class="grid-sidebar">
+    <div></div>
+    <nav>
+          <ul>
+            <li><div class="button{% if page.url == "/" %}-active"> <span>>home</span>{% else %}"><a href="/">>home</a> {% endif %}</div></li>
+            <li><div class="button{% if page.url contains "/text/" %}-active"> <span>>text</span>{% else %}"><a href="/text/">>text</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url contains "/photo/" %}-active"> <span>>photo</span>{% else %}"><a href="/photo/">>photo</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url contains "/audio/" %}-active"> <span>>audio</span>{% else %}"><a href="/audio/">>audio</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url contains "/about/" %}-active"> <span>>about</span>{% else %}"><a href="/about/">>about</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url contains "/fillertext/" %}-active"> <span>>test</span>{% else %}"><a href="/fillertext/">>test2</a> {% endif %}</div></li> 
+          </ul>
+    </nav>
+  </div>
+</body>

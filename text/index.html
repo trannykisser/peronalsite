@@ -1,0 +1,25 @@
+---
+layout: default
+title: text
+index: true
+---
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>text</title>
+        <link rel="stylesheet" href="../css/mainstyle.css">
+    </head>
+    <body>
+        <ul class="index">
+        {% for text in site.pages %}
+            {% if text.path contains 'text/' and text.index != true %}
+            <li>
+                <h2><a href="{{ text.url }}">{{ text.title }}</a></h2>
+                <p><em>{{ text.date | date: "%B %d, %Y" }}</em></p>
+                <p>{{ text.description }}</p>
+            </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </body>
+</html>

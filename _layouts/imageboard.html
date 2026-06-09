@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="../css/mainstyle.css">
+    </head>
+<body>
+<div class="grid-vertical">
+    <div>
+        <div class="header">
+        {% include header.html %}
+        </div>
+        <div class="sidebar">
+        {% include sidebar.html %}
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div id=title class=title>
+            <div class="column">
+                <h1><a href=".."><<</a></h1>
+            </div>
+            <div class="column">
+                <h1 class="titletext" id="titletext">{{ page.title }}</h1>
+            </div>
+            <div class="column">
+               <h1><a href="/">home</a></h1>
+            </div>
+        
+        <div id="footer" class="footer">
+        {% include footer.html %}
+        </div>
+    </div>
+
+    <div class="column"> 
+    </div>
+</div>
+</body>
+</html>
