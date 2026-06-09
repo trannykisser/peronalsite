@@ -10,6 +10,15 @@ index: true
         <link rel="stylesheet" href="../css/mainstyle.css">
     </head>
     <body>
-       
+       <div class="cardgrid">
+            {% for photo in site.pages %}
+                {% if photo.path contains 'photo' % and photo.index != true %}
+                <a class="card" href="{{ photo.url }}">
+                    <h2 class="details">{{photo.title}}</h2>
+                    <img class="thumbnail" loading="lazy" src="{{ photo.dir }}{{ photo.image}}">
+                </a>
+                {% endif %}
+            {% endfor %}
+       </div>
     </body>
 </html>
