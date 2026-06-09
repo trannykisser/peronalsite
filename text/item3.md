@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: txt
 title: fillertext3
 date: 2026-03-10
-description: Additional text snippets and commentary
+description: you won't believe whats in this one
 ---
 
 

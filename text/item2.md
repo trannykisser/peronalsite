@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: txt
 title: fillertext2
 date: 2026-02-20
-description: More filler content and random thoughts
+description: More filler
 ---
 
 

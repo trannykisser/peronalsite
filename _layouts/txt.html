@@ -18,7 +18,7 @@
 
     <div class="main">
 
-        <div id=title class=title>
+        <div class=title>
             <div class="column">
                 <h1><a href=".."><<</a></h1>
             </div>
@@ -29,7 +29,7 @@
                <h1><a href="/">home</a></h1>
             </div>
         </div>
-
+        <p><em>{{ page.date | date: "%B %d, %Y" }}</em></p>
         {{ content }}
         
         <div class="footer">

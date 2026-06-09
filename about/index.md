@@ -7,3 +7,5 @@ index: true
 ## about
 
 peepee pooooooopooo
+
+include contact details

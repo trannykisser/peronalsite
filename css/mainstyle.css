@@ -88,7 +88,7 @@ ref colours
     text-align: center;
     color: #12488b;
     margin-top: 5%;
-    border-top: 1px solid #12488b;
+    border-top: 2px solid #12488b;
     /* padding-top: 1%; */
     text-indent: 0%;
     }
@@ -99,7 +99,7 @@ ref colours
     font-family: vfd;
     color: #26a267;
     text-align: center;
-    border-bottom: 1px solid #12488b;
+    border-bottom: 2px solid #12488b;
     padding: 1%;
     text-indent: 0%;
     }
@@ -108,13 +108,35 @@ ref colours
     font-size: 1.5em;
     }
 .button-active {
-    color: #12428b;
+    color: #12488b;
     font-size: 1.5em;
     }
 .index {
     list-style-position: inside;
     list-style-type: none;
     padding-left: 0;
+    }
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    }
+.flexcontainer {
+    display:flex;
+    flex-flow: row wrap;
+    align-content: stretch;
+    gap: 5%;
+    margin: 1% 0;
+    }
+.flexitem  {
+    flex: 1fr;
+    border: #12488b 2px solid;
+    }
+.thumbnail {
+    object-fit: cover;
     }
 /* element stylings */
 body {
@@ -126,14 +148,7 @@ body {
     margin: 0;
     font-size: 1.4em;
     }
-.sidebar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: auto;
-    max-height: 100vh;
-    overflow-y: auto;
-    }
+
 nav>ul {
     font-family: vfd;
     text-align: left;
@@ -152,6 +167,7 @@ h2 {
     color: black;
     background: #DDDDDD;
     padding:    0.2% 0.5% 1% 0.5%;
+    font-size: 1.2em;
     }
 
 p {
@@ -168,7 +184,7 @@ strong { /*heavy emphasis*/
   color: black;
   padding: 0 0.2%;
     }
-.no-indent {
+.no-indent, p > .no-indent {
     text-indent: 0%;
     }
 /* link stylings */
