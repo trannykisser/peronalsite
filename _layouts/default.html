@@ -4,24 +4,26 @@
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="{{ '/css/mainstyle.css' | relative_url }}">
+        <link rel="preload" href="{{ '/typefaces/Geogrotesque/GeogrotesqueCyr-Bold.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+
     </head>
 <body>
 <div class="grid-vertical">
     <aside class="sidebar">
-        {% include sidebar.html %}
+        {% include sidebar.html speech=page.comment %}
     </aside>
 
     <div class="main">
 
-        <div class=title>
+        <div class="title">
             <div class="column">
-                <h1><a href=" {%if page.index == true %} / {% else %}{{ page.url }}/.. {% endif %}"><<</a></h1>
+                <h1><a href="{% if page.index %}{{ '/' | relative_url }}{% else %}{{ page.dir | relative_url }}{% endif %}"><<</a></h1>
             </div>
             <div class="column">
                 <h1 class="titletext" id="titletext">{{ page.title }}</h1>
             </div>
             <div class="column">
-               <h1><a href="/">home</a></h1>
+               <h1><a href="{{ '/' | relative_url }}">home</a></h1>
             </div>
         </div>
 

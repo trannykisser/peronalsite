@@ -3,31 +3,18 @@ layout: default
 title: audio
 index: true
 ---
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>audio</title>
-        <link rel="stylesheet" href="../css/mainstyle.css">
-    </head>
-    <body>
-        <ul class="index">
-        {% for audio in site.static_files %}
-            {% if audio.path contains 'audio/' %}
-            
-            <li>
-                <h2>{{ audio.basename }}</h2>
-                <p><em>{{ audio.modified_time | date: "%B %d, %Y" }}</em></p>
-                <!-- <p>{{ audio.description }}</p> -->
-                <audio controls>
-                    <source src="{{ audio.path }}" type="audio/wav">
-                    Your browser does not support the audio element.
-                    </audio>
-            </li>
-            {% endif %}
-        {% endfor %}
-        </ul>
-    </body>
-</html>
-
-
-
+<ul class="index">
+{% for audio in site.static_files %}
+    {% if audio.path contains 'audio/' %}
+    <li>
+        <h2>{{ audio.basename }}</h2>
+        <p><em>{{ audio.modified_time | date: "%B %d, %Y" }}</em></p>
+        <!-- <p>{{ audio.description }}</p> -->
+        <audio controls>
+            <source src="{{ audio.path | relative_url }}" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </li>
+    {% endif %}
+{% endfor %}
+</ul>

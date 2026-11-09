@@ -1,13 +1,13 @@
 @font-face {
     font-family: berkeley-mono;
-    src: url(../fonts/BerkeleyMono-Bold.woff) format('woff'),
-        url(../fonts/BerkeleyMono-BoldItalic.woff) format('woff'),
-        url(../fonts/BerkeleyMono-Italic.woff) format('woff'),
-        url(../fonts/BerkeleyMono-Regular.woff) format('woff');
+    src: url(../typefaces/BerkeleyMono/BerkeleyMono-Bold.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-BoldItalic.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-Italic.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-Regular.woff) format('woff');
     }
 @font-face {
     font-family: vfd;
-    src: url(../fonts/vfd.woff2) format('woff2');
+    src: url(../typefaces/vfd/vfd.woff2) format('woff2');
     }
 body {
     font-family: berkeley-mono;

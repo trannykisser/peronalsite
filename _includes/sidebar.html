@@ -3,16 +3,17 @@
         <br>
         <a href=""><img src="{{ '/images/pfpuppy.png' | relative_url }}" alt="pfpuppy" height="200px" width="200px"> </a><br>
         <span>katya</span> <br>
-        <span>woof woof woof woof</span>
+        <span class="speech">“{{ include.speech | default: "woof woof woof woof" | escape }}”</span>
+
         
     </div>
     <nav>
           <ul>
-            <li><div class="button{% if page.url == "/" %}-active"> <span>>HOME</span>{% else %}"><a href="/">>HOME</a> {% endif %}</div></li>
-            <li><div class="button{% if page.url contains "/text/" %}-active"> <span>>TEXT</span>{% else %}"><a href="/text/">>TEXT</a> {% endif %}</div></li> 
-            <li><div class="button{% if page.url contains "/photo/" %}-active"> <span>>PHOTO</span>{% else %}"><a href="/photo/">>PHOTO</a> {% endif %}</div></li> 
-            <li><div class="button{% if page.url contains "/audio/" %}-active"> <span>>AUDIO</span>{% else %}"><a href="/audio/">>AUDIO</a> {% endif %}</div></li> 
-            <li><div class="button{% if page.url contains "/about/" %}-active"> <span>>ABOUT</span>{% else %}"><a href="/about/">>ABOUT</a> {% endif %}</div></li> 
-            <li><div class="button{% if page.url contains "/fillertext/" %}-active"> <span>>TEST</span>{% else %}"><a href="/fillertext/">>TEST</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url == "/" %}-active"> <span>>HOME</span>{% else %}"><a href="{{ '/' | relative_url }}">>HOME</a> {% endif %}</div></li>
+            <li><div class="button{% if page.url == "/text/" %}-active"> <span>>TEXT</span>{% else %}"><a href="{{ '/text/' | relative_url }}">>TEXT</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url == "/photo/" %}-active"> <span>>PHOTO</span>{% else %}"><a href="{{ '/photo/' | relative_url }}">>PHOTO</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url == "/audio/" %}-active"> <span>>AUDIO</span>{% else %}"><a href="{{ '/audio/' | relative_url }}">>AUDIO</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url == "/about/" %}-active"> <span>>ABOUT</span>{% else %}"><a href="{{ '/about/' | relative_url }}">>ABOUT</a> {% endif %}</div></li> 
+            <li><div class="button{% if page.url == "/test/" %}-active"> <span>>TEST</span>{% else %}"><a href="{{ '/test/' | relative_url }}">>TEST</a> {% endif %}</div></li> 
           </ul>
     </nav>

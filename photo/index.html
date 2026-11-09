@@ -3,22 +3,12 @@ layout: default
 title: photo
 index: true
 ---
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Photo</title>
-        <link rel="stylesheet" href="../css/mainstyle.css">
-    </head>
-    <body>
-       <div class="cardgrid">
-            {% for photo in site.pages %}
-                {% if photo.path contains 'photo' % and photo.index != true %}
-                <a class="card" href="{{ photo.url }}">
-                    <h2 class="details">{{photo.title}}</h2>
-                    <img class="thumbnail" loading="lazy" src="{{ photo.dir }}{{ photo.image}}">
-                </a>
-                {% endif %}
-            {% endfor %}
-       </div>
-    </body>
-</html>
+<div class="cardgrid">
+    {% assign photos = site.pages | where_exp: "item", "item.photo == true" | sort: "date" | reverse %}
+    {% for photo in photos %}
+    <a class="card" href="{{ photo.url | relative_url }}">
+        <h2 class="details">{{ photo.title | escape }}</h2>
+        <img class="thumbnail" loading="lazy" src="{{ photo.image_path | relative_url }}" alt="{{ photo.title | escape }}">
+    </a>
+    {% endfor %}
+</div>

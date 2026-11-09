@@ -51,7 +51,8 @@ ref colours
 
 @font-face {
     font-family: Geogrotesque;
-    src: url(../typefaces/Geogrotesque/GeogrotesqueCyr-Bold.ttf) format('truetype');
+    src: url(../typefaces/Geogrotesque/GeogrotesqueCyr-Bold.woff2) format('woff2'),
+        url(../typefaces/Geogrotesque/GeogrotesqueCyr-Bold.ttf) format('truetype');
     font-weight: bold;
     font-style: normal;
     }
@@ -65,7 +66,7 @@ ref colours
 } */
 .grid-vertical {
   display: grid;
-  grid-template-columns: minmax(max-content, 1fr) 8fr 1fr;
+  grid-template-columns: minmax(max-content, 1fr) 8fr 0.3fr;
   /* grid-column-gap: 10px;; */
   align-items: stretch; 
     }
@@ -91,13 +92,17 @@ ref colours
 
 .title {
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
-    font-family: vfd;
+    grid-template-columns: minmax(max-content, 1fr) minmax(0, 8fr) minmax(max-content, 1fr);
+    /* column-gap: 0em; */
     color: #26a267;
     text-align: center;
     border-bottom: 2px solid #12488b;
     padding: 1%;
     text-indent: 0%;
+    }
+
+.titletext {
+    overflow-wrap: anywhere; /* only the long middle title may break mid-word */
     }
 
 .button {
@@ -117,6 +122,7 @@ ref colours
     position: sticky;
     top: 0;
     height: 100vh;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* profile top, nav bottom: same look as now */
@@ -164,6 +170,42 @@ ref colours
     box-sizing: border-box;
     align-items: flex-end;
     }
+.splash {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #DDDDDD;
+    border: 2px solid #DDDDDD;
+    /* box-shadow: 2px 2px #000; */
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    }
+.splashtitle {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) minmax(0, 8fr) minmax(max-content, 1fr);
+    /* column-gap: 0em; */
+    text-align: center;
+    text-indent: 0%;
+    }
+.splashtitle h1, .splashtitle a, .splashtitle a:visited {
+    color: #000000;
+    /* font-size: 1.2em; */
+    }
+.splashphoto {
+    max-width: 100%;
+    }
+.speech {
+    font-family: BerkeleyMono;
+    font-size: 0.8em;
+    color: #5E5C64;
+    text-align: start;
+    padding: 0.2em;
+    text-indent: 0%;
+}
 .details {
     position: absolute;
     top: 0;
@@ -204,6 +246,10 @@ h1 {
     color: #26a267;    
     text-align: center;
     }
+.vertical {
+    /* text-align: left; */
+    writing-mode: sideways-lr;
+    }
 h2 {
     font-family: Geogrotesque;
     color: black;
@@ -226,7 +272,7 @@ strong { /*heavy emphasis*/
   color: black;
   padding: 0 0.2%;
     }
-.no-indent, p > .no-indent {
+.no-indent, .no-indent p {
     text-indent: 0%;
     }
 /* link stylings */
