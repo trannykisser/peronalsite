@@ -11,46 +11,50 @@ ref colours
 */
 @font-face {
     font-family: berkeley-mono;
-    src: url(../typefaces/BerkeleyMono-Bold.ttf) format('truetype'),
-        url(../typefaces/BerkeleyMono-BoldItalic.ttf) format('truetype'),
-        url(../typefaces/BerkeleyMono-Italic.ttf) format('truetype'),
-        url(../typefaces/BerkeleyMono-Regular.ttf) format('truetype');
-    }
-@font-face {
-    font-family: berkeley-mono;
-    src: url(../typefaces/BerkeleyMono-Regular.ttf) format('truetype');
+    src: url(../typefaces/BerkeleyMono/BerkeleyMono-Regular.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
     }
 
 @font-face {
     font-family: berkeley-mono;
-    src: url(../typefaces/BerkeleyMono-Bold.ttf) format('truetype');
+    src: url(../typefaces/BerkeleyMono/BerkeleyMono-Bold.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-Bold.ttf) format('truetype');
     font-weight: bold;
     font-style: normal;
     }
 
 @font-face {
     font-family: berkeley-mono;
-    src: url(../typefaces/BerkeleyMono-Italic.ttf) format('truetype');
+    src: url(../typefaces/BerkeleyMono/BerkeleyMono-Italic.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-Italic.ttf) format('truetype');
     font-weight: normal;
     font-style: italic;
     }
 
 @font-face {
     font-family: berkeley-mono;
-    src: url(../typefaces/BerkeleyMono-BoldItalic.ttf) format('truetype');
+    src: url(../typefaces/BerkeleyMono/BerkeleyMono-BoldItalic.woff) format('woff'),
+        url(../typefaces/BerkeleyMono/BerkeleyMono-BoldItalic.ttf) format('truetype');
     font-weight: bold;
     font-style: italic;
     }
 
 @font-face {
     font-family: vfd;
-    src: url(../typefaces/vfd.ttf) format('truetype');
-    src: url(../typefaces/vfd.woff2) format('woff2');
+    src: url(../typefaces/vfd/vfd.woff2) format('woff2'),
+        url(../typefaces/vfd/vfd.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+    }
+
+@font-face {
+    font-family: Geogrotesque;
+    src: url(../typefaces/Geogrotesque/GeogrotesqueCyr-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    }
 /*classes*/
 /* .container {
     display: grid;
@@ -61,27 +65,19 @@ ref colours
 } */
 .grid-vertical {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: minmax(max-content, 1fr) 8fr 1fr;
   /* grid-column-gap: 10px;; */
   align-items: stretch; 
-  justify-items: center;
     }
 .main {
     grid-column: 2;
     padding: 0% 10%;
+    min-width: 0;
     }
 
-.header {
-    position: sticky;
-    grid-column: 1;
-    top: 0;
-    left: 0;
-    font-size: 1fr;
-    height:100vh;
-    text-align: left;
+.profile {
     color: #12488b;
-    border-right: 2px solid #12488b;
-    padding: 0% 1vw;
+    text-align: left;
     text-indent: 0%;
     }
 .footer {
@@ -117,19 +113,23 @@ ref colours
     padding-left: 0;
     }
 .sidebar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: auto;
-    max-height: 100vh;
+    font-family: Geogrotesque;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* profile top, nav bottom: same look as now */
+    border-right: 2px solid #12488b;
+    padding: 0 1vw;
     overflow-y: auto;
-    }
+}
 .flexcontainer {
     display:flex;
     flex-flow: row wrap;
     align-content: stretch;
     gap: 5%;
-    margin: 1% 0;
+    margin: 2% 0;
     }
 .flexitem  {
     flex: 1fr;
@@ -137,7 +137,7 @@ ref colours
 .cardgrid {
     margin-top: 2%;
     display: grid;
-    gap: 32px;
+    gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 .card {
@@ -147,7 +147,7 @@ ref colours
     height: 100%;
     width: 100%;
     /* background-color: #f2f2f2; */
-    border: 2px solid #12488b;
+    
     /* box-shadow: 2px 2px #000; */
     box-sizing: border-box;
     text-decoration: none;
@@ -159,7 +159,8 @@ ref colours
     height: 240px;
     object-fit: cover;
     flex-shrink: 0;
-    box-shadow: 2px 2px #000;
+    /* box-shadow: 2px 2px #000; */
+    border: 2px solid #DDDDDD;
     box-sizing: border-box;
     align-items: flex-end;
     }
@@ -173,10 +174,13 @@ ref colours
     justify-content: space-between;
     align-items: flex-start;
     margin: 0;
-    padding: 0 4px 4px;
+    padding: 4px 4px 4px;
     font-size: 0.8em;
     }
 /* element stylings */
+html {
+    scrollbar-gutter: stable; /* reserve scrollbar space so short and long pages are the same width */
+    }
 body {
     background-color: #380C2a;
     color: #DDDDDD;
@@ -188,7 +192,7 @@ body {
     }
 
 nav>ul {
-    font-family: vfd;
+    font-family: Geogrotesque;
     text-align: left;
     list-style: none
     }
@@ -196,15 +200,15 @@ nav>ul>li {
     padding: 2% 0%;
     }
 h1 {
-    font-family: vfd;
+    font-family: Geogrotesque;
     color: #26a267;    
     text-align: center;
     }
 h2 {
-    font-family: vfd;
+    font-family: Geogrotesque;
     color: black;
     background: #DDDDDD;
-    padding:    0.2% 0.5% 1% 0.5%;
+    padding:    1% 0.5%;
     font-size: 1.2em;
     }
 
@@ -226,17 +230,32 @@ strong { /*heavy emphasis*/
     text-indent: 0%;
     }
 /* link stylings */
+
 a:link, a:visited{
     color: #a1724c;
     text-decoration: underline;
+    display: inline-block;
     }
-.footer a:link, .header a:link, .footer a:visited, .header a:visited {
+
+.footer {
+    font-weight: bold;
+    }
+
+.footer a:link, .profile a:link, .footer a:visited, .profile a:visited {
         color: #12488b;
         text-decoration: underline;
     }
-a:hover, .footer a:hover, .header a:hover {
-      text-decoration: none;    
-    }    
+    /* link jumps on hover */
+a:hover:not(.footer a, .profile a) {
+      translate: -0.1em -0.1em;
+      filter: drop-shadow( 0.1em 0.1em #12488b);
+      }
+    /* Title links have no underline */
 .title a:link, .title a:visited {
+    text-decoration: none;
+    }
+
+    /* links lose underline on hover */
+a:hover, .footer a:hover, .profile a:hover {
     text-decoration: none;
     }

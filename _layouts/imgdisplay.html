@@ -4,24 +4,19 @@
     <head>
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
-        <link rel="stylesheet" href="../css/mainstyle.css">
+        <link rel="stylesheet" href="{{ '/css/mainstyle.css' | relative_url }}">
     </head>
 <body>
 <div class="grid-vertical">
-    <div>
-        <div class="header">
-        {% include header.html %}
-        </div>
-        <div class="sidebar">
+    <aside class="sidebar">
         {% include sidebar.html %}
-        </div>
-    </div>
+    </aside>
 
     <div class="main">
 
         <div class=title>
             <div class="column">
-                <h1><a href=" {%if page.index == true %} / {% else %}{{ page.url }}/.. {% endif %}"><<</a></h1>
+                <h1><a href="./"><<</a></h1>
             </div>
             <div class="column">
                 <h1 class="titletext" id="titletext">{{ page.title }}</h1>
