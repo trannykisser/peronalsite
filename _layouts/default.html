@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+{% if page.url == '/' %}
+        <html class="nogutter">
+{% else %}
+        <html>
+{% endif %}
     <head>
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
@@ -8,33 +12,34 @@
         <link rel="icon" type="image/png" href="{{ '/images/pfpuppy.png' | relative_url }}">
     </head>
 <body>
-<div class="grid-vertical">
+    {% if page.url == '/' %}
+        <div class="grid-vertical cover">
+    {% else %}
+        <div class="grid-vertical">
+    {% endif %}
     <aside class="sidebar">
         {% include sidebar.html speech=page.comment %}
     </aside>
 
-    <div class="main">
+    {% if page.url == '/' %}
+        <div class="home">
+    {% else %}
+        <div class="main">
+    {% endif %}
 
-        <div class="title">
-            <div class="column">
-                <h1><a href="{% if page.index %}{{ '/' | relative_url }}{% else %}{{ page.dir | relative_url }}{% endif %}"><<</a></h1>
-            </div>
-            <div class="column">
-                <h1 class="titletext" id="titletext">{{ page.title }}</h1>
-            </div>
-            <div class="column">
-               <h1><a href="{{ '/' | relative_url }}">home</a></h1>
-            </div>
-        </div>
+        {% if page.url != '/' %}
+            {% include title.html %}
+        {% endif %}
 
         {{ content }}
         
-        <div class="footer">
-        {% include footer.html %}
+        {% if page.url != '/' %}
+            {% include footer.html %}
+        
         </div>
-    </div>
 
     <div class="column"> 
+        {% endif %}
     </div>
 </div>
 </body>

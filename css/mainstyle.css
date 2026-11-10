@@ -221,8 +221,25 @@ ref colours
     padding: 4px 4px 4px;
     font-size: 0.8em;
     }
-/* element stylings */
-html {
+
+/* Controls display of the landing page cover */
+
+.grid-vertical.cover {
+    grid-template-columns: minmax(max-content, 1fr) 8fr;
+}
+.covercontainer {
+    overflow: clip;
+    height: 100vh;
+}
+img.cover {
+    overflow: clip;
+    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+}
+
+/* element stylings */   
+html:not(.nogutter) {
     scrollbar-gutter: stable; /* reserve scrollbar space so short and long pages are the same width */
     }
 body {
