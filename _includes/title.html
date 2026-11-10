@@ -1,0 +1,11 @@
+<div class="title">
+            <div class="column">
+                <h1><a href="{% if page.index %}{{ '/' | relative_url }}{% else %}{{ page.dir | relative_url }}{% endif %}"><<</a></h1>
+            </div>
+            <div class="column">
+                <h1 class="titletext" id="titletext">{{ page.title }}</h1>
+            </div>
+            <div class="column">
+               <h1><a href="{{ '/' | relative_url }}">home</a></h1>
+            </div>
+</div>
