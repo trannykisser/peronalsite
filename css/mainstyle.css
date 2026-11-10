@@ -67,7 +67,7 @@ ref colours
 } */
 .grid-vertical {
   display: grid;
-  grid-template-columns: minmax(max-content, 1fr) 8fr 0.3fr;
+  grid-template-columns: max-content 8fr 0.3fr;
   /* grid-column-gap: 10px;; */
   align-items: stretch; 
     }
@@ -86,7 +86,7 @@ ref colours
     text-align: center;
     color: #12488b;
     margin-top: 5%;
-    border-top: 2px solid #12488b;
+    border-top: 4px solid #12488b;
     /* padding-top: 1%; */
     text-indent: 0%;
     }
@@ -97,7 +97,7 @@ ref colours
     /* column-gap: 0em; */
     color: #26a267;
     text-align: center;
-    border-bottom: 2px solid #12488b;
+    border-bottom: 4px solid #12488b;
     padding: 1%;
     text-indent: 0%;
     }
@@ -127,7 +127,7 @@ ref colours
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* profile top, nav bottom: same look as now */
-    border-right: 2px solid #12488b;
+    border-right: 4px solid #12488b;
     background-color: #38172d;
     padding: 0 1vw;
     overflow-y: auto;
@@ -205,9 +205,10 @@ ref colours
     font-size: 0.8em;
     color: #5E5C64;
     text-align: start;
-    padding: 0.2em;
+    padding: 0.2em 0;
     text-indent: 0%;
-}
+    max-width: 200px;
+} 
 .details {
     position: absolute;
     top: 0;
@@ -224,21 +225,29 @@ ref colours
 
 /* Controls display of the landing page cover */
 
-.grid-vertical.cover {
-    grid-template-columns: minmax(max-content, 1fr) 8fr;
+.grid-vertical.covergrid {
+    grid-template-columns: max-content 1fr;
 }
 .covercontainer {
+    position: relative;
     overflow: clip;
     height: 100vh;
 }
 img.cover {
+    display: block;
+    position: relative;
     overflow: clip;
     object-fit: cover; 
     width: 100%;
     height: 100vh;
 }
+.cover.overlay {
+    position: absolute;
+    inset: 0; 
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 10;
+}
 
-/* asd        */
 
 
 /* element stylings */   

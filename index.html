@@ -8,7 +8,9 @@ comment: "hiiiiiiii hello welcommeeee ^w^ hiii"
     {% assign cover = photos | sample %}
 
     <img src="{{ cover.image_path | relative_url }}" alt="{{ cover.title }}" class="cover">
-    
+    <!-- <div class="cover"> -->
+        <img src="{{ 'images/splash.png' | relative_url }}" class="cover overlay">
+    <!-- </div> -->
     <!-- <img src="photo/banner.png" class="cover"> -->
 
-</div>   
+</div>    
