@@ -1,0 +1,10 @@
+# Site settings
+
+# Leave empty. On GitHub Pages the build workflow fills this in with the
+# repository path (e.g. "/peronalsite") so `relative_url` links keep working.
+baseurl: ""
+
+# _plugins/photo_pages.rb (see _plugins/README.md)
+photo_pages:
+  dir: photo      # folder whose images get their own pages
+  layout: photo   # layout used for those pages (_layouts/photo.html)

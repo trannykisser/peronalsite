@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title | escape }}</title>
+        <link rel="stylesheet" href="{{ '/css/mainstyle.css' | relative_url }}">
+        <link rel="preload" href="{{ '/typefaces/Geogrotesque/GeogrotesqueCyr-Bold.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+
+    </head>
+<body>
+<div class="grid-vertical">
+    <aside class="sidebar">
+        {% include sidebar.html speech=page.exif.author %}
+    </aside>
+    <div class="main">
+
+        <div class="splashtitle">
+                <div class="column">
+                    <h1><a href="{{ page.dir | relative_url }}"><<</a></h1>
+                </div>
+                <div class="column">
+                    <h1 class="titletext">{{ page.title | escape }}</h1>
+                </div>
+                <div class="column">
+                    <h1><a href="{{ '/' | relative_url }}">home</a></h1>
+                </div>
+        </div>
+        <div>
+            <img class="splashphoto" src="{{ page.image_path | relative_url }}" alt="{{ page.title | escape }}">
+        </div>
+
+    </div>
+   
+
+</div>
+</body>
+</html>
