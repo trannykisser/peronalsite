@@ -1,6 +1,7 @@
 /*
 ref colours
 #380C2a background purple
+#38172d Background purple 2
 #5E5C64 background grey
 #26a267 text highlight green
 #DDDDDD text white
@@ -127,6 +128,7 @@ ref colours
     flex-direction: column;
     justify-content: space-between; /* profile top, nav bottom: same look as now */
     border-right: 2px solid #12488b;
+    background-color: #38172d;
     padding: 0 1vw;
     overflow-y: auto;
 }
