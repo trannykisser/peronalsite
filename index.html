@@ -6,5 +6,9 @@ comment: "hiiiiiiii hello welcommeeee ^w^ hiii"
 <div class="covercontainer">
     {% assign photos = site.pages | where_exp: "item", "item.photo == true" %}
     {% assign cover = photos | sample %}
+
     <img src="{{ cover.image_path | relative_url }}" alt="{{ cover.title }}" class="cover">
+    
+    <!-- <img src="photo/banner.png" class="cover"> -->
+
 </div>   
